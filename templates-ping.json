@@ -5,7 +5,7 @@
     "description": "Deploy the Ping Identity product that started it all!",
     "categories": ["Ping"],
     "platform": "linux",
-    "logo": "https://www.pingidentity.com/content/dam/ping-6-2-assets/topnav-json-configs/Ping-Logo.svg",
+    "logo": "http://sandbox.joelrader.ping-eng.com:8080/ping-logo.svg",
     "image": "pingidentity/pingfederate:edge",
     "ports": [
       "9999:9999/tcp",
