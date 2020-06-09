@@ -9,7 +9,7 @@
     "image": "pingidentity/pingfederate:edge",
     "ports": [
       "9999:9999/tcp",
-	  "9031:9031/tcp"
+      "9031:9031/tcp"
     ],
     "env": [
       {
