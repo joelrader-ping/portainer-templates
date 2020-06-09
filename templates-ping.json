@@ -1,0 +1,79 @@
+[
+  {
+    "type": 1,
+    "title": "PingFederate",
+    "description": "Deploy the Ping Identity product that started it all!",
+    "categories": ["Ping"],
+    "platform": "linux",
+    "logo": "https://www.pingidentity.com/content/dam/ping-6-2-assets/topnav-json-configs/Ping-Logo.svg",
+    "image": "pingidentity/pingfederate:edge",
+    "ports": [
+      "9999:9999/tcp"
+    ],
+    "env": [
+      {
+        "SERVER_PROFILE_URL": "https://github.com/pingidentity/pingidentity-server-profiles.git",
+        "SERVER_PROFILE_PATH": "getting-started/pingfederate"
+      }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "PingDirectory",
+    "description": "A highly performant LDAP directory and datastore supporting some of the largest organizations in the world!",
+    "categories": ["ldap"],
+    "platform": "linux",
+    "logo": "https://www.pingidentity.com/content/dam/ping-6-2-assets/topnav-json-configs/Ping-Logo.svg",
+    "image": "registry:latest",
+    "ports": [
+      "5000/tcp"
+    ],
+    "volumes": [{ "container": "/var/lib/registry"}]
+  },
+  {
+    "type": 1,
+    "title": "PingAccess",
+    "description": "A reverse-proxy and web access management tool to protect all your applications",
+    "categories": ["wam"],
+    "platform": "linux",
+    "logo": "https://www.pingidentity.com/content/dam/ping-6-2-assets/topnav-json-configs/Ping-Logo.svg",
+    "image": "registry:latest",
+    "ports": [
+      "5000/tcp"
+    ],
+    "volumes": [{ "container": "/var/lib/registry"}]
+  },
+  {
+    "type": 1,
+    "title": "Ping Identity - Full Stack Demo",
+    "description": "Deploy a simple full-stack of Ping software to demonstration an important use case",
+    "categories": ["ping"],
+    "platform": "linux",
+    "logo": "https://www.pingidentity.com/content/dam/ping-6-2-assets/topnav-json-configs/Ping-Logo.svg",
+    "image": "registry:latest",
+    "ports": [
+      "5000/tcp"
+    ],
+    "volumes": [{ "container": "/var/lib/registry"}]
+  },
+  {
+    "type": 1,
+    "title": "ICSynergy Portal w/ Ping SSO and MFA",
+    "description": "See our technology partner demo with ICSynergy! IAM integration using Ping for SSO and MFA",
+    "categories": ["TAP"],
+    "platform": "linux",
+    "logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQFzTPOrU-aAew/company-logo_200_200/0?e=2159024400&v=beta&t=UOczg88T9_GOkIU4kH4NhAq04_4sXdz95bqINGlSuDs",
+    "image": "registry:latest",
+    "ports": [
+      "5000/tcp"
+    ],
+    "volumes": [{ "container": "/var/lib/registry"}]
+  },
+  {
+    "type": 1,
+    "title": "PingDownloader",
+    "description": "Download Ping software and trial licenses",
+    "note": "This requires you have your Ping DevOps username and key!",
+    "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/cockroachdb/edge/docker-stack.yml"
+  }
+]
