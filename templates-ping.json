@@ -8,7 +8,8 @@
     "logo": "https://www.pingidentity.com/content/dam/ping-6-2-assets/topnav-json-configs/Ping-Logo.svg",
     "image": "pingidentity/pingfederate:edge",
     "ports": [
-      "9999:9999/tcp"
+      "9999:9999/tcp",
+	  "9031:9031/tcp"
     ],
     "env": [
       {
