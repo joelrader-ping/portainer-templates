@@ -1,0 +1,3 @@
+[submodule "stacks/jstinnett23/pingfederate-helloworld-channel"]
+	path = stacks/jstinnett23/pingfederate-helloworld-channel
+	url = https://github.com/jstinnett23/pingfederate-helloworld-channel
