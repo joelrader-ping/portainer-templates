@@ -71,6 +71,27 @@
     "volumes": [{ "container": "/var/lib/registry"}]
   },
   {
+    "type": 3,
+    "title": "jstinnet23 - PingFederate HTTP BIN Sample App",
+    "description": "Login to PingFederate on port 9999 as pingchannel - channelrocks! - Test out the SP (needs logo file)(what else should go here???)",
+    "logo": "http://sandbox.joelrader.ping-eng.com:8080/ping-logo.svg",
+    "categories": [
+      "PingFederate"
+    ],
+    "note": "Additional notes go here. Should reference something in the external repository",
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/jstinnett23/pingfederate-helloworld-channel",
+      "stackfile": "docker-compose.yml"
+    },
+    "env": [
+      {
+        "SERVER_PROFILE_URL": "https://github.com/jstinnett23/pingfederate-helloworld-channel",
+        "SERVER_PROFILE_PATH": "pingfederate"
+      }
+    ]
+  },
+  {
     "type": 1,
     "title": "PingDownloader",
     "description": "Download Ping software and trial licenses",
