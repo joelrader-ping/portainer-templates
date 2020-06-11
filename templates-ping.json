@@ -82,7 +82,7 @@
     "platform": "linux",
     "repository": {
       "url": "https://github.com/jstinnett23/pingfederate-helloworld-channel",
-      "stackfile": "docker-compose.yml"
+      "stackfile": "docker-compose.yaml"
     },
     "env": [
       {
