@@ -72,7 +72,7 @@
   },
   {
     "type": 3,
-    "title": "jstinnet23 - PingFederate HTTP BIN Sample App",
+    "title": "[TESTING] PingFederate HTTP BIN Sample App",
     "description": "Login to PingFederate on port 9999 as pingchannel - channelrocks! - Test out the SP (needs logo file)(what else should go here???)",
     "logo": "http://sandbox.joelrader.ping-eng.com:8080/ping-logo.svg",
     "categories": [
