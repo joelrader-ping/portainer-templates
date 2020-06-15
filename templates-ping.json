@@ -5,7 +5,7 @@
     "description": "Deploy the Ping Identity product that started it all!",
     "categories": ["Ping"],
     "platform": "linux",
-    "logo": "http://sandbox.joelrader.ping-eng.com:8080/ping-logo.svg",
+    "logo": "https://github.com/joelrader-ping/portainer-templates/raw/master/ping-logo.svg",
     "image": "pingidentity/pingfederate:edge",
     "ports": [
       "9999:9999/tcp",
@@ -22,7 +22,7 @@
     "type": 3,
     "title": "[TESTING] PingFederate HTTP BIN Sample App",
     "description": "Login to PingFederate on port 9999 as pingchannel - channelrocks! - Test out the SP (needs logo file)(what else should go here???)",
-    "logo": "http://sandbox.joelrader.ping-eng.com:8080/ping-logo.svg",
+    "logo": "https://github.com/joelrader-ping/portainer-templates/raw/master/ping-logo.svg",
     "categories": [
       "PingFederate"
     ],
