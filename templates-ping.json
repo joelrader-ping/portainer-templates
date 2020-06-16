@@ -4,7 +4,7 @@
     "title": "PingFederate",
     "description": "Deploy the Ping Identity product that started it all!",
     "categories": ["Ping"],
-    "note": "<b>Admin Console Login</b><br>hostname:9999/pingfederate/app<br><b>Username: </b>admin<br><b>Password: </b>2FederateMore",
+    "note": "<b>Admin Console Login: </b>hostname:9999/pingfederate/app<br/><b>Username: </b>admin<br/><b>Password: </b>2FederateMore",
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg",
     "image": "pingidentity/pingfederate:edge",
