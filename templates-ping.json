@@ -19,6 +19,25 @@
     ]
   },
   {
+    "type": 1,
+    "title": "PingFederate - Novacoast",
+    "description": "PingFederate instance - sample for Novacoast",
+    "categories": ["Ping"],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/novacoast-logo.svg",
+    "image": "pingidentity/pingfederate:edge",
+    "ports": [
+      "9998:9999/tcp",
+      "9030:9031/tcp"
+    ],
+    "env": [
+      {
+        "SERVER_PROFILE_URL": "https://github.com/pingidentity/pingidentity-server-profiles.git",
+        "SERVER_PROFILE_PATH": "getting-started/pingfederate"
+      }
+    ]
+  },
+  {
     "type": 3,
     "title": "[TESTING] PingFederate HTTP BIN Sample App",
     "description": "Login to PingFederate on port 9999 as pingchannel - channelrocks! - Test out the SP (needs logo file)(what else should go here???)",
