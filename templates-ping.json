@@ -2,7 +2,7 @@
   {
     "type": 1,
     "title": "PingFederate",
-    "description": "Deploy the Ping Identity product that started it all!",
+    "description": "Deploy the Ping Identity product that started it all! PingFederate is a Global Authentication Authority.",
     "categories": ["Ping"],
     "note": "<b>Admin Console Login: </b>hostname:9999/pingfederate/app<br/><b>Username: </b>admin<br/><b>Password: </b>2FederateMore",
     "platform": "linux",
