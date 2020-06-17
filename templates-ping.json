@@ -46,7 +46,7 @@
     "categories": ["Ping"],
     "note": "<b>Admin Console Login</b><br>hostname:9997/pingfederate/app<br><b>Username: </b>admin<br><b>Password: </b>2FederateMore",
     "platform": "linux",
-    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/oneidentity-logo-short.png",
+    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/oi-logo.png",
     "image": "pingidentity/pingfederate:edge",
     "ports": [
       "9997:9999/tcp",
