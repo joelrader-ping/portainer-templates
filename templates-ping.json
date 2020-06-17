@@ -41,7 +41,7 @@
   },
   {
     "type": 1,
-    "title": "Ping Identity & One Identity - Demonstration",
+    "title": "PingIdentity/OneIdentity DevOps Solution Lab",
     "description": "Demonstration of Ping Identity and One Identity environment with Workflow Capabilities + SSO",
     "categories": ["Ping"],
     "note": "<b>Admin Console Login</b><br>hostname:9997/pingfederate/app<br><b>Username: </b>admin<br><b>Password: </b>2FederateMore",
