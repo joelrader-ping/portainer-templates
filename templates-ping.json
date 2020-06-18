@@ -108,7 +108,7 @@
     "categories": [
       "PingDirectory"
     ],
-    "note": "Admin console (administrator/2FederateM0re): https://hostname:8443/",
+    "note": "Admin Console: <br>https://hostname:8443/<br>administrator<br>2FederateM0re",
     "platform": "linux",
     "repository": {
       "url": "https://github.com/joelrader-ping/portainer-templates",
