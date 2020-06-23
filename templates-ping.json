@@ -132,8 +132,7 @@
       },
       {
         "name": "PING_IDENTITY_ACCEPT_EULA",
-        "label": "Accept the Ping Identity EULA?",
-        "description": "You must accept the EULA to deploy",
+        "label": "Accept Ping Identity EULA?",
         "select": [
           {
             "text": "No, I do not accept",
@@ -145,7 +144,7 @@
             "value": "YES"
           }
         ],
-        "description": "Accept the Ping Identity EULA?"
+        "description": "Accept the EULA in order to successfully deploy this template"
       }
     ]
   }
