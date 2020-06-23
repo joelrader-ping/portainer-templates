@@ -127,7 +127,7 @@
         "select": [
           {
             "text": "Yes, I agree",
-            "value": "YES",
+            "value": "YES"
           },
           {
             "text": "No, I disagree",
