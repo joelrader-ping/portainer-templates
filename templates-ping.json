@@ -134,8 +134,7 @@
             "value": "NO",
             "default": true
           }
-        ],
-        "description": "EULA environment variable"
+        ]
       },
       {
         "name": "PING_IDENTITY_DEVOPS_USER",
