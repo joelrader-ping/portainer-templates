@@ -134,7 +134,8 @@
             "value": "NO",
             "default": true
           }
-        ]
+        ],
+        "description": "EULA Acceptance"
       },
       {
         "name": "PING_IDENTITY_DEVOPS_USER",
