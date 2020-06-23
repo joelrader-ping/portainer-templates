@@ -99,5 +99,37 @@
         "SERVER_PROFILE_PATH": "pingfederate"
       }
     ]
+  },
+  {
+    "type": 3,
+    "title": "[TESTING] PingDirectory - Getting Started Demo",
+    "description": "Simple demo environment for PingDirectory with PingDataConsole",
+    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg",
+    "categories": [
+      "PingDirectory"
+    ],
+    "note": "Admin Console: <br>https://hostname:8443/<br>administrator<br>2FederateM0re",
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/joelrader-ping/portainer-templates",
+      "stackfile": "stacks/pingdirectory-getting-started.yaml"
+    },
+    "env": [
+      {
+        "name": "MAX_HEAP_SIZE",
+        "label": "Java Max Heap Size (1024m or larger)",
+        "default": "1024m"
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_USER",
+        "label": "Ping DevOps Username/Email",
+        "default": "username@domain.org"
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_KEY",
+        "label": "Ping DevOps Key",
+        "default": "abcdefgh-abcd-abcd-abcd-abcdefgh"
+      }
+    ]
   }
 ]
