@@ -35,6 +35,7 @@ services:
       - SERVER_PROFILE_PATH=getting-started/pingdirectory
       - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
       - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
     #env_file:
     #  - ./.pingidentity/devops
     networks:
