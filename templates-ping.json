@@ -121,11 +121,6 @@
         "default": "1024m"
       },
       {
-        "name": "PING_IDENTITY_ACCEPT_EULA",
-        "label": "YES to accept the Ping Identity EULA",
-        "default": "NO"
-      },
-      {
         "name": "PING_IDENTITY_DEVOPS_USER",
         "label": "Ping DevOps Username",
         "default": "username@domain.org"
@@ -136,25 +131,21 @@
         "default": "abcdefgh-abcd-1234-5678-abcdefgh"
       },
       {
-        "name": "ENV_VAR_WITH_SELECT_VALUE",
-        "label": "An environment variable",
-        "description": "A description for this env var",
+        "name": "PING_IDENTITY_ACCEPT_EULA",
+        "label": "Accept the Ping Identity EULA?",
+        "description": "You must accept the EULA to deploy",
         "select": [
           {
-            "text": "Yes, I agree",
-            "value": "Y",
+            "text": "No, I do not accept",
+            "value": "NO",
             "default": true
           },
           {
-            "text": "No, I disagree",
-            "value": "N"
-          },
-          {
-            "text": "Maybe",
-            "value": "YN"
+            "text": "Yes, I accept",
+            "value": "YES"
           }
         ],
-        "description": "Some environment variable."
+        "description": "Accept the Ping Identity EULA?"
       }
     ]
   }
