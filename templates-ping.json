@@ -3,10 +3,30 @@
     "type": 1,
     "title": "PingFederate",
     "description": "Deploy the Ping Identity product that started it all! PingFederate is a Global Authentication Authority.",
-    "categories": ["PingFederate"],
+    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg",
+    "categories": ["PingFederate", "Ping Identity"],
     "note": "<b>Admin Console: </b>https://hostname:9999/pingfederate/app<br/><b>Username: </b>admin<br/><b>Password: </b>2FederateMore",
     "platform": "linux",
-    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg",
+    "image": "pingidentity/pingfederate:edge",
+    "ports": [
+      "9999:9999/tcp",
+      "9031:9031/tcp"
+    ],
+    "env": [
+      {
+        "SERVER_PROFILE_URL": "https://github.com/pingidentity/pingidentity-server-profiles.git",
+        "SERVER_PROFILE_PATH": "getting-started/pingfederate"
+      }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "PingFederate - Specify your own Server Profile",
+    "description": "Deploy PingFederate, but use your own Server Profile (e.g. hosted on GitHub)",
+    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo-inverse.png",
+    "categories": ["PingFederate", "Ping Identity"],
+    "note": "<b>Admin Console: </b>https://hostname:9999/pingfederate/app<br/><b>Username: </b>admin<br/><b>Password: </b>2FederateMore",
+    "platform": "linux",
     "image": "pingidentity/pingfederate:edge",
     "ports": [
       "9999:9999/tcp",
