@@ -133,6 +133,7 @@
       {
         "name": "PING_IDENTITY_ACCEPT_EULA",
         "label": "Accept Ping Identity EULA?",
+        "description": "You must accept the EULA to deploy",
         "select": [
           {
             "text": "No, I do not accept",
