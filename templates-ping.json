@@ -127,13 +127,13 @@
       },
       {
         "name": "PING_IDENTITY_DEVOPS_USER",
-        "label": "Ping DevOps Username/Email",
+        "label": "Ping DevOps Username",
         "default": "username@domain.org"
       },
       {
         "name": "PING_IDENTITY_DEVOPS_KEY",
         "label": "Ping DevOps Key",
-        "default": "abcdefgh-abcd-abcd-abcd-abcdefgh"
+        "default": "abcdefgh-abcd-1234-5678-abcdefgh"
       },
       {
         "name": "ENV_VAR_WITH_SELECT_VALUE",
