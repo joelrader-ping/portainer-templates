@@ -121,6 +121,11 @@
         "default": "1024m"
       },
       {
+        "name": "PING_IDENTITY_ACCEPT_EULA",
+        "label": "YES to accept the Ping Identity EULA",
+        "default": "NO"
+      },
+      {
         "name": "PING_IDENTITY_DEVOPS_USER",
         "label": "Ping DevOps Username/Email",
         "default": "username@domain.org"
