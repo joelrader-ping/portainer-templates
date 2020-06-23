@@ -36,7 +36,7 @@ services:
       - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
       - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
       - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
-      - MAX_HEAP_SIZE=${MAX_HEAP_SIZE}
+      #- MAX_HEAP_SIZE=${MAX_HEAP_SIZE}
     #env_file:
     #  - ./.pingidentity/devops
     networks:
