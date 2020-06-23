@@ -134,6 +134,27 @@
         "name": "PING_IDENTITY_DEVOPS_KEY",
         "label": "Ping DevOps Key",
         "default": "abcdefgh-abcd-abcd-abcd-abcdefgh"
+      },
+      {
+        "name": "ENV_VAR_WITH_SELECT_VALUE",
+        "label": "An environment variable",
+        "description": "A description for this env var",
+        "select": [
+          {
+            "text": "Yes, I agree",
+            "value": "Y",
+            "default": true
+          },
+          {
+            "text": "No, I disagree",
+            "value": "N"
+          },
+          {
+            "text": "Maybe",
+            "value": "YN"
+          }
+        ],
+        "description": "Some environment variable."
       }
     ]
   }
