@@ -40,6 +40,54 @@
     ]
   },
   {
+    "type": 3,
+    "title": "PingDirectory - Getting Started Demo",
+    "description": "Simple demo environment for PingDirectory with PingDataConsole",
+    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg",
+    "categories": [
+      "PingDirectory"
+    ],
+    "note": "<b>Admin Console: </b><br/>https://hostname:8443/<br/>administrator<br/>2FederateM0re",
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/joelrader-ping/portainer-templates",
+      "stackfile": "stacks/pingdirectory-getting-started.yaml"
+    },
+    "env": [
+      {
+        "name": "MAX_HEAP_SIZE",
+        "label": "Java Max Heap Size (1024m or larger)",
+        "default": "1024m"
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_USER",
+        "label": "Ping DevOps Username",
+        "default": "username@domain.org"
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_KEY",
+        "label": "Ping DevOps Key",
+        "default": "abcdefgh-abcd-1234-5678-abcdefgh"
+      },
+      {
+        "name": "PING_IDENTITY_ACCEPT_EULA",
+        "label": "Accept Ping Identity EULA?",
+        "description": "Accept the EULA in order to successfully deploy this template",
+        "select": [
+          {
+            "text": "No, I do not accept",
+            "value": "NO",
+            "default": true
+          },
+          {
+            "text": "Yes, I accept",
+            "value": "YES"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "type": 1,
     "title": "PingFederate - Novacoast",
     "description": "PingFederate instance - sample for Novacoast",
@@ -99,53 +147,6 @@
         "SERVER_PROFILE_PATH": "pingfederate"
       }
     ]
-  },
-  {
-    "type": 3,
-    "title": "PingDirectory - Getting Started Demo",
-    "description": "Simple demo environment for PingDirectory with PingDataConsole",
-    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg",
-    "categories": [
-      "PingDirectory"
-    ],
-    "note": "<b>Admin Console: </b><br/>https://hostname:8443/<br/>administrator<br/>2FederateM0re",
-    "platform": "linux",
-    "repository": {
-      "url": "https://github.com/joelrader-ping/portainer-templates",
-      "stackfile": "stacks/pingdirectory-getting-started.yaml"
-    },
-    "env": [
-      {
-        "name": "MAX_HEAP_SIZE",
-        "label": "Java Max Heap Size (1024m or larger)",
-        "default": "1024m"
-      },
-      {
-        "name": "PING_IDENTITY_DEVOPS_USER",
-        "label": "Ping DevOps Username",
-        "default": "username@domain.org"
-      },
-      {
-        "name": "PING_IDENTITY_DEVOPS_KEY",
-        "label": "Ping DevOps Key",
-        "default": "abcdefgh-abcd-1234-5678-abcdefgh"
-      },
-      {
-        "name": "PING_IDENTITY_ACCEPT_EULA",
-        "label": "Accept Ping Identity EULA?",
-        "description": "Accept the EULA in order to successfully deploy this template",
-        "select": [
-          {
-            "text": "No, I do not accept",
-            "value": "NO",
-            "default": true
-          },
-          {
-            "text": "Yes, I accept",
-            "value": "YES"
-          }
-        ]
-      }
-    ]
   }
+  
 ]
