@@ -33,10 +33,10 @@ services:
     environment:
       - SERVER_PROFILE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
       - SERVER_PROFILE_PATH=getting-started/pingdirectory
-      #- PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
-      #- PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
-      #- PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
-      #- MAX_HEAP_SIZE=${MAX_HEAP_SIZE}
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+      - MAX_HEAP_SIZE=${MAX_HEAP_SIZE}
     #env_file:
     #  - ./.pingidentity/devops
     networks:
