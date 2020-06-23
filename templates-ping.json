@@ -122,8 +122,20 @@
       },
       {
         "name": "PING_IDENTITY_ACCEPT_EULA",
-        "label": "Accept Ping Identity EULA? Set to YES",
-        "default": "NO"
+        "label": "Accept Ping Identity EULA?",
+        "description": "If set to YES, you are accepting the Ping Identity EULA",
+        "select": [
+          {
+            "text": "Yes, I agree",
+            "value": "YES",
+          },
+          {
+            "text": "No, I disagree",
+            "value": "NO",
+            "default": true
+          }
+        ],
+        "description": "EULA environment variable"
       },
       {
         "name": "PING_IDENTITY_DEVOPS_USER",
