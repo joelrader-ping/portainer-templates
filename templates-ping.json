@@ -23,7 +23,7 @@
     "type": 1,
     "title": "PingFederate - Specify your own Server Profile",
     "description": "Deploy PingFederate, but use your own Server Profile (e.g. hosted on GitHub)",
-    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo-inverse.png",
+    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo-grey.png",
     "categories": ["PingFederate", "Ping Identity"],
     "note": "<b>Admin Console: </b>https://hostname:9999/pingfederate/app<br/><b>Username: </b>admin<br/><b>Password: </b>2FederateMore",
     "platform": "linux",
@@ -34,8 +34,16 @@
     ],
     "env": [
       {
-        "SERVER_PROFILE_URL": "https://github.com/pingidentity/pingidentity-server-profiles.git",
-        "SERVER_PROFILE_PATH": "getting-started/pingfederate"
+        "name": "SERVER_PROFILE_URL",
+        "label": "Specify your own PingFederate server profile",
+        "description": "A previously saved PingFederate configuration can be saved to GitHub and referenced here",
+        "default": "https://github.com/pingidentity/pingidentity-server-profiles.git"
+      },
+      {
+        "name": "SERVER_PROFILE_PATH",
+        "label": "Specify your own PingFederate server profile path",
+        "description": "This is the location in the repo where your profile is stored",
+        "default": "getting-started/pingfederate"
       }
     ]
   },
@@ -43,7 +51,7 @@
     "type": 1,
     "title": "PingAccess",
     "description": "Web Access Management using PingAccess. Provide course-grained access to web resources.",
-    "categories": ["PingAccess"],
+    "categories": ["PingAccess", "Ping Identity"],
     "note": "<b>Admin Console: </b>https://hostname:9001/<br/><b>Username: </b>administrator<br/><b>Password: </b>2Access",
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg",
@@ -64,9 +72,7 @@
     "title": "PingDirectory - Getting Started Demo",
     "description": "Simple demo environment for PingDirectory with PingDataConsole",
     "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg",
-    "categories": [
-      "PingDirectory"
-    ],
+    "categories": ["PingDirectory", "Ping Identity"],
     "note": "<b>Admin Console: </b><br/>https://hostname:8443/<br/>administrator<br/>2FederateM0re",
     "platform": "linux",
     "repository": {
@@ -111,7 +117,7 @@
     "type": 1,
     "title": "PingFederate - Novacoast",
     "description": "PingFederate instance - sample for Novacoast",
-    "categories": ["Channel Partner Demos"],
+    "categories": ["Channel Partner Demos", "Novacoast"],
     "note": "<b>Admin Console Login</b><br>https://hostname:9998/pingfederate/app<br><b>Username: </b>admin<br><b>Password: </b>2FederateMore",
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/novacoast-logo.svg",
@@ -131,7 +137,7 @@
     "type": 1,
     "title": "PingIdentity/OneIdentity DevOps Solution Lab",
     "description": "Demonstration of Ping Identity and One Identity environment with Workflow Capabilities + SSO",
-    "categories": ["Channel Partner Demos"],
+    "categories": ["Channel Partner Demos", "One Identity"],
     "note": "<b>Admin Console Login</b><br>https://hostname:9997/pingfederate/app<br><b>Username: </b>admin<br><b>Password: </b>2FederateMore",
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/oi-logo.png",
@@ -152,9 +158,7 @@
     "title": "[TESTING] PingFederate HTTP BIN Sample App",
     "description": "Login to PingFederate on port 9999",
     "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg",
-    "categories": [
-      "PingFederate"
-    ],
+    "categories": ["PingFederate", "Ping Identity"],
     "note": "Additional notes go here. Should reference something in the external repository",
     "platform": "linux",
     "repository": {
