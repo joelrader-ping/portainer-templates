@@ -14,8 +14,14 @@
     ],
     "env": [
       {
-        "SERVER_PROFILE_URL": "https://github.com/pingidentity/pingidentity-server-profiles.git",
-        "SERVER_PROFILE_PATH": "getting-started/pingfederate"
+        "name": "SERVER_PROFILE_URL",
+        "default": "https://github.com/pingidentity/pingidentity-server-profiles.git",
+        "preset": true
+      },
+      {
+        "name": "SERVER_PROFILE_PATH",
+        "default": "getting-started/pingfederate",
+        "preset": true
       }
     ]
   },
@@ -62,8 +68,14 @@
     ],
     "env": [
       {
-        "SERVER_PROFILE_URL": "https://github.com/pingidentity/pingidentity-server-profiles.git",
-        "SERVER_PROFILE_PATH": "getting-started/pingaccess"
+        "name": "SERVER_PROFILE_URL",
+        "default": "https://github.com/pingidentity/pingidentity-server-profiles.git",
+        "preset": true
+      },
+      {
+        "name": "SERVER_PROFILE_PATH",
+        "default": "getting-started/pingaccess",
+        "preset": true
       }
     ]
   },
@@ -128,8 +140,16 @@
     ],
     "env": [
       {
-        "SERVER_PROFILE_URL": "https://github.com/pingidentity/pingidentity-server-profiles.git",
-        "SERVER_PROFILE_PATH": "getting-started/pingfederate"
+        "name": "SERVER_PROFILE_URL",
+        "label": "Specify your own PingFederate server profile",
+        "description": "A previously saved PingFederate configuration can be saved to GitHub and referenced here",
+        "default": "https://github.com/pingidentity/pingidentity-server-profiles.git"
+      },
+      {
+        "name": "SERVER_PROFILE_PATH",
+        "label": "Specify your own PingFederate server profile path",
+        "description": "This is the location in the repo where your profile is stored",
+        "default": "getting-started/pingfederate"
       }
     ]
   },
@@ -148,8 +168,16 @@
     ],
     "env": [
       {
-        "SERVER_PROFILE_URL": "https://github.com/pingidentity/pingidentity-server-profiles.git",
-        "SERVER_PROFILE_PATH": "getting-started/pingfederate"
+        "name": "SERVER_PROFILE_URL",
+        "label": "Specify your own PingFederate server profile",
+        "description": "A previously saved PingFederate configuration can be saved to GitHub and referenced here",
+        "default": "https://github.com/pingidentity/pingidentity-server-profiles.git"
+      },
+      {
+        "name": "SERVER_PROFILE_PATH",
+        "label": "Specify your own PingFederate server profile path",
+        "description": "This is the location in the repo where your profile is stored",
+        "default": "getting-started/pingfederate"
       }
     ]
   },
@@ -167,8 +195,16 @@
     },
     "env": [
       {
-        "SERVER_PROFILE_URL": "https://github.com/jstinnett23/pingfederate-helloworld-channel",
-        "SERVER_PROFILE_PATH": "pingfederate"
+        "name": "SERVER_PROFILE_URL",
+        "label": "Specify your own PingFederate server profile",
+        "description": "A previously saved PingFederate configuration can be saved to GitHub and referenced here",
+        "default": "https://github.com/pingidentity/pingidentity-server-profiles.git"
+      },
+      {
+        "name": "SERVER_PROFILE_PATH",
+        "label": "Specify your own PingFederate server profile path",
+        "description": "This is the location in the repo where your profile is stored",
+        "default": "getting-started/pingfederate"
       }
     ]
   }
