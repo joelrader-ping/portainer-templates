@@ -85,7 +85,13 @@
     "description": "Simple demo environment for PingDirectory with PingDataConsole",
     "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg",
     "categories": ["PingDirectory", "Ping Identity"],
-    "note": "<b>Admin Console: </b><br/>https://hostname:8443/<br/>administrator<br/>2FederateM0re",
+    "note": "See our documentation for this demo on >
+            <a href=\"https://github.com/pingidentity/pingidentity-devops-getting-started/blob/master/docs/deploySimpleStack.md\">
+            GitHub</a>
+            <b>Admin Console: </b><br/>
+            https://hostname:8443/<br/>
+            administrator<br/>
+            2FederateM0re",
     "platform": "linux",
     "repository": {
       "url": "https://github.com/joelrader-ping/portainer-templates",
