@@ -2,6 +2,8 @@
 
 This repository hosts Ping Identity application templates (**'Apps Templates'**) definitions for portainer.
 
+![Ping App Template Screenshot](screenshot.png?raw=true "Ping App Templates")
+
 To deploy a Portainer instance with the Ping App Templates referenced by default, run the Docker command below on a Linux server with Docker/Docker-Compose installed. This will create an Admin Console at http://hostname:9000/ with default credentials (admin/2FederateM0re). 
 
     docker run -d \
