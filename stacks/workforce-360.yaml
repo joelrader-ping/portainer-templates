@@ -1,0 +1,118 @@
+version: 2
+
+# This version has been modified from:
+# https://raw.githubusercontent.com/pingidentity/Workforce360/master/docs/deployment/Compose/docker-compose.yaml
+
+services:
+  pingfederate:
+    image: pingidentity/pingfederate:latest
+    command: wait-for pingdirectory:389 -t 600 -- entrypoint.sh start-server
+    # Testing secrets integration
+    #secrets:
+    #  - devops-secret
+    # env_files not supported, pass in environment variables via substitution
+    # https://github.com/pingidentity/Workforce360/blob/master/docs/deployment/Compose/env_vars
+    #env_file:
+    #  - ./env_vars
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/pingidentity/Workforce360.git
+      - SERVER_PROFILE_PATH=pingfederate
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+      - PF_LOG_LEVEL=${PF_LOG_LEVEL}
+      - PF_USER_PWD=${PF_USER_PWD}
+      - AD_DC_HOST=${AD_DC_HOST}
+      - AD_BASE_DN=${AD_BASE_DN}
+        #    volumes:       
+        #- ./pingfederate:/opt/out/instance
+    ports:
+      - "9031:9031"
+      - "9999:9999"
+
+  pingdirectory:
+    image: pingidentity/pingdirectory:latest
+    #env_file:
+    #  - ./env_vars
+    #secrets:
+    #  - devops-secret
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/pingidentity/Workforce360.git
+      - SERVER_PROFILE_PATH=pingdirectory
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+      - USER_BASE_DN=${USER_BASE_DN}
+    # Uncomment the `volume:` section below to persist PingFederate data if you restart the container
+    # NOTE: Comment out the `environment:` section above - they do not co-exist
+    #volumes:
+    #  - ./pingdirectory:/opt/out/instance
+    ports:
+      - "1636:636"
+      - "1443:443"
+  
+  pingdataconsole:
+    image: pingidentity/pingdataconsole:latest
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+
+  pingconfig:
+    image: pricecs/pingconfigurator
+    environment:
+      - COLLECTIONS=https://www.getpostman.com/collections/f0860d4add56123536c2
+    volumes: 
+      # An environment file should be injected into the image - this file should contain your specfic info and secrets
+      - ./postman_vars.json:/usr/src/app/postman_vars.json
+
+  pingdatasync:
+    image: pingidentity/pingdatasync:latest
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/pingidentity/Workforce360.git
+      - SERVER_PROFILE_PATH=pingdatasync
+    #env_file:
+    #  - ./env_vars
+    #secrets:
+    #  - devops-secret
+    ulimits:
+      nproc:
+        soft: 16384
+        hard: 16384
+      nofile:
+        soft: 65535
+        hard: 65535
+    ports:
+      - "2636:636"
+      - "2443:443"
+
+  pingcentral:
+    image: pingidentity/pingcentral:latest
+    command: wait-for pingfederate:9031 -t 7200 -- entrypoint.sh start-server
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/pingidentity/Workforce360.git
+      - SERVER_PROFILE_PATH=pingcentral/external-mysql-db
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+      - PING_CENTRAL_BLIND_TRUST=${PING_CENTRAL_BLIND_TRUST}
+      - PING_CENTRAL_VERIFY_HOSTNAME=${PING_CENTRAL_VERIFY_HOSTNAME}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - PING_CENTRAL_OIDC_ENABLED=${PING_CENTRAL_OIDC_ENABLED}
+      - PING_CENTRAL_CLIENT_ID=${PING_CENTRAL_CLIENT_ID}
+      - PING_CENTRAL_CLIENT_SECRET=${PING_CENTRAL_CLIENT_SECRET}
+      - PF_ISSUER=${PF_ISSUER}
+    #env_file:
+    #  - ./env_vars
+    #secrets:
+    #  - devops-secret
+    ports:
+      - "9022:9022"
+    depends_on:
+      - "pingcentral-db"
+
+  pingcentral-db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: 2Federate
+    ports:
+      - "3306:3306"
+
+#secrets:
+#  devops-secret:
+#    file: ${HOME}/.pingidentity/devops
