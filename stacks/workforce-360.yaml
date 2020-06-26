@@ -70,6 +70,8 @@ services:
     environment:
       - SERVER_PROFILE_URL=https://github.com/pingidentity/Workforce360.git
       - SERVER_PROFILE_PATH=pingdatasync
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
     #env_file:
     #  - ./env_vars
     #secrets:
