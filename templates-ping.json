@@ -331,6 +331,18 @@
         ]
       },
       {
+        "name": "PING_IDENTITY_DEVOPS_USER",
+        "label": "Ping DevOps Username",
+        "description": "Your Ping DevOps User's Email Address",
+        "default": "username@domain.org"
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_KEY",
+        "label": "Ping DevOps Key",
+        "description": "Your Ping DevOps User's Key",
+        "default": "abcdefgh-abcd-1234-5678-abcdefgh"
+      },
+      {
         "name": "SERVER_PROFILE_URL",
         "label": "Specify your own PingFederate server profile",
         "description": "A previously saved PingFederate configuration can be saved to GitHub and referenced here",
