@@ -315,6 +315,22 @@
 		],
     "env": [
       {
+        "name": "PING_IDENTITY_ACCEPT_EULA",
+        "label": "Accept Ping Identity EULA?",
+        "description": "Answer Yes if you have accepted the EULA.",
+        "select": [
+          {
+            "text": "No, I have not accepted",
+            "value": "NO",
+            "default": true
+          },
+          {
+            "text": "Yes, I have accepted",
+            "value": "YES"
+          }
+        ]
+      },
+      {
         "name": "SERVER_PROFILE_URL",
         "label": "Specify your own PingFederate server profile",
         "description": "A previously saved PingFederate configuration can be saved to GitHub and referenced here",
