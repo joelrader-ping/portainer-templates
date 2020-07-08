@@ -361,6 +361,12 @@
         "label": "Specify your own PingFederate server profile path",
         "description": "This is the location in the repo where your profile is stored",
         "default": "getting-started/pingfederate"
+      },
+      {
+        "name": "LICENSE_FILE_NAME",
+        "label": "License filename (optional)",
+        "description": "If you have your own PingFederate license file, specify the filename here",
+        "default": "pingfederate.lic"
       }
     ]
   },
