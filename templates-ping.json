@@ -12,6 +12,14 @@
       "9999:9999/tcp",
       "9031:9031/tcp"
     ],
+    "volumes": [
+      {
+        "container": "/opt/out"
+			},
+			{
+				"container": "/opt/in"
+			}
+		],
     "env": [
       {
         "name": "SERVER_PROFILE_URL",
