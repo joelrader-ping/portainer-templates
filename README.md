@@ -1,6 +1,7 @@
 # Ping Identity - App Templates
 
 This repository hosts Ping Identity application templates (**'Apps Templates'**) definitions for Portainer.
+
 **Why: ** Portainer is a web-based management console for Docker containers. Deploy Ping Identity software with only a few clicks!  
 To aid in understanding how the Ping Identity Platform functions, this repository contains a set of Application Templates that are 
 intended to showcase *Proof of Concept* scenarios. Documentation links/notes are on the App Templates configuration page.
