@@ -23,7 +23,8 @@ https://www.portainer.io/installation/
 
 To deploy a Portainer instance with the Ping App Templates referenced by default, run the command below. This will create an Admin Console at:
 
- [Replace localhost if using an external Docker host](http://hostname:9000/)
+<http://hostname:9000/>
+*Note:Replace localhost if using an external Docker host*
  
  Default credentials: admin/2FederateM0re
 
