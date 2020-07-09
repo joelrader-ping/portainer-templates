@@ -12,9 +12,18 @@ Template File: https://raw.githubusercontent.com/joelrader-ping/portainer-templa
 ## How to Install Portainer ##
 https://www.portainer.io/installation/
 
+## Screenshot of Application Templates ##
 ![Ping App Template Screenshot](screenshot.png?raw=true "Ping App Templates")
 
-To deploy a Portainer instance with the Ping App Templates referenced by default, run the Docker command below on a Linux server with Docker/Docker-Compose installed. This will create an Admin Console at http://hostname:9000/ with default credentials (admin/2FederateM0re). 
+## Installation Instructions ##
+> ### Pre-Reqs ###
+> * Have Docker & Docker Compose installed
+> * Host has 4GB+ RAM (8GB recommended for larger app templates)
+
+
+To deploy a Portainer instance with the Ping App Templates referenced by default, run the command below. This will create an Admin Console at:
+ [Replace localhost if using an external Docker host](http://hostname:9000/)
+ Default credentials: admin/2FederateM0re
 
     docker run -d \
     -p 9000:9000 \
