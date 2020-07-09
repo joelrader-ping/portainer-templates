@@ -19,6 +19,7 @@ https://www.portainer.io/installation/
 > ### Pre-Reqs ###
 > * Have Docker & Docker Compose installed
 > * Host has 4GB+ RAM (8GB recommended for larger app templates)
+> * Optional: Have a Ping DevOps Username/Key via [DevOps Registration Page](https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration)
 
 
 To deploy a Portainer instance with the Ping App Templates referenced by default, run the command below. 
