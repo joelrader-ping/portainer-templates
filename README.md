@@ -21,12 +21,7 @@ https://www.portainer.io/installation/
 > * Host has 4GB+ RAM (8GB recommended for larger app templates)
 
 
-To deploy a Portainer instance with the Ping App Templates referenced by default, run the command below. This will create an Admin Console at:
-
-<http://hostname:9000/>
-*Note:Replace localhost if using an external Docker host*
- 
- Default credentials: admin/2FederateM0re
+To deploy a Portainer instance with the Ping App Templates referenced by default, run the command below. 
 
     docker run -d \
     -p 9000:9000 \
@@ -39,3 +34,11 @@ To deploy a Portainer instance with the Ping App Templates referenced by default
     --templates https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/templates-ping.json \
     --logo "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg" \
     --admin-password='$2y$05$phwSg3ykaHLBDYEEpUHfFeePAlN52B5jX.EOS4GsVPtr9wd008iSO'
+
+This will create an Admin Console at:
+
+<http://hostname:9000/>
+
+*Note:Replace localhost if using an external Docker host*
+ 
+ Default credentials: admin/2FederateM0re
