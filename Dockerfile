@@ -1,5 +1,5 @@
 FROM nginx:stable-alpine
 
-COPY templates-ping.json ping-logo.svg /usr/share/nginx/html/
+COPY templates-ping.json ./logos/ping-logo.svg /usr/share/nginx/html/
 
 EXPOSE 80
