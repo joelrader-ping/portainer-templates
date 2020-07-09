@@ -82,11 +82,13 @@
       {
         "name": "PING_IDENTITY_DEVOPS_USER",
         "label": "Ping DevOps Username",
+        "description": "https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration",
         "default": "username@domain.org"
       },
       {
         "name": "PING_IDENTITY_DEVOPS_KEY",
         "label": "Ping DevOps Key",
+        "description": "https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration",
         "default": "abcdefgh-abcd-1234-5678-abcdefgh"
       },
       {
@@ -219,11 +221,13 @@
       {
         "name": "PING_IDENTITY_DEVOPS_USER",
         "label": "Ping DevOps Username",
+        "description": "https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration",
         "default": "username@domain.org"
       },
       {
         "name": "PING_IDENTITY_DEVOPS_KEY",
         "label": "Ping DevOps Key",
+        "description": "https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration",
         "default": "abcdefgh-abcd-1234-5678-abcdefgh"
       },
       {
@@ -341,13 +345,13 @@
       {
         "name": "PING_IDENTITY_DEVOPS_USER",
         "label": "Ping DevOps Username",
-        "description": "Your Ping DevOps User's Email Address",
+        "description": "https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration",
         "default": "username@domain.org"
       },
       {
         "name": "PING_IDENTITY_DEVOPS_KEY",
         "label": "Ping DevOps Key",
-        "description": "Your Ping DevOps User's Key",
+        "description": "https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration",
         "default": "abcdefgh-abcd-1234-5678-abcdefgh"
       },
       {
