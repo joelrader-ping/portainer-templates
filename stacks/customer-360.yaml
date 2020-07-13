@@ -1,0 +1,154 @@
+version: 2
+
+# This version has been modified from:
+# https://raw.githubusercontent.com/cprice-ping/Customer360/master/deployment/Compose/docker-compose.yaml
+
+services:
+  pingfederate:
+    image: pingidentity/pingfederate:latest
+    command: wait-for pingdirectory:389 -t 600 -- entrypoint.sh start-server
+    
+    # Handling env-vars and secrets from Portainer, so not using here
+    #env_file:
+    #  - ./env-vars
+    #secrets:
+    #  - devops-secret
+    
+    environment:
+    - SERVER_PROFILE_URL=https://github.com/pingidentity/Customer360.git
+    - SERVER_PROFILE_PATH=pingfederate
+    
+    # Environment variables, using syntax so that they can be updated by Portainer
+    # ${ENV_VAR} allows for a matching {templates.json} reference
+    - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+    - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+    - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+    - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+    - PF_LOG_LEVEL=${PF_LOG_LEVEL}
+    - PF_USER_PWD=${PF_USER_PWD}
+
+    # These were commented out in original
+    #volumes:
+    #  - ${HOME}/projects/devops/volumes/full-stack.pingfederate:/opt/out
+    #  - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingfederate:/opt/in
+    ports:
+      - 9031:9031
+      - 9999:9999
+
+  pingdirectory:
+    image: pingidentity/pingdirectory:latest
+    
+    # Commented out, using Portainer to set env-vars
+    # Not using secrets
+    #env_file:
+    #  - ./env-vars
+    #secrets:
+    #  - devops-secret
+    
+    environment:
+    - SERVER_PROFILE_URL=https://github.com/pingidentity/Customer360.git
+    - SERVER_PROFILE_PATH=pingdirectory
+    
+    # Setting environment variables from Portainer
+    - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+    - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+    - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+    - USER_BASE_DN=${USER_BASE_DN}
+    
+    # Commented out in original
+    #volumes:
+    #  - ${HOME}/projects/devops/volumes/full-stack.pingdirectory:/opt/out
+    #  - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingdirectory:/opt/in
+    
+    # 389=LDAP, 1636=LDAPS(?), 2443=?
+    ports:
+      - 389:389
+      - 1636:636
+      - 2443:2443
+
+  pingdatasync:
+    image: pingidentity/pingdatasync:latest
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/pingidentity/Customer360.git
+      - SERVER_PROFILE_PATH=pingdatasync
+      
+      # Setting values from Portainer
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+    
+    # Not using env_vars here, setting them from Portainer
+    #env_file:
+    #  - ./env-vars   
+    #secrets:
+    #  - devops-secret
+    
+    # Commented out in original
+    #volumes:
+    #   - ${HOME}/projects/devops/volumes/simple-sync.pingdatasync:/opt/out
+    ulimits:
+      nproc:
+        soft: 16384
+        hard: 16384
+      nofile:
+        soft: 65535
+        hard: 65535
+    ports:
+      - 3636:636
+      - 3443:443
+  
+  pingdataconsole:
+    image: pingidentity/pingdataconsole:latest
+    ports:
+      - 8080:8080
+      - 8443:8443
+
+  pingconfig:
+    image: pricecs/pingconfigurator
+    environment:
+      # Collections: Solution - Customer360
+      - COLLECTIONS=https://www.getpostman.com/collections/344bbc13f4ccd4ebc5f5
+    volumes: 
+      # An environment file should be injected into the image - this file should contain your specfic info and secrets
+      - ./postman_vars.json:/usr/src/app/postman_vars.json  
+
+  pingcentral:
+    image: pingidentity/pingcentral:latest
+    command: wait-for pingfederate:9031 -t 7200 -- entrypoint.sh start-server
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/pingidentity/Customer360.git
+      - SERVER_PROFILE_PATH=pingcentral/external-mysql-db
+
+      # Set env_vars from Portainer
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+      - PING_CENTRAL_BLIND_TRUST=${PING_CENTRAL_BLIND_TRUST}
+      - PING_CENTRAL_VERIFY_HOSTNAME=${PING_CENTRAL_VERIFY_HOSTNAME}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - PING_CENTRAL_OIDC_ENABLED=${PING_CENTRAL_OIDC_ENABLED}
+      - PING_CENTRAL_CLIENT_ID=${PING_CENTRAL_CLIENT_ID}
+      - PING_CENTRAL_CLIENT_SECRET=${PING_CENTRAL_CLIENT_SECRET}
+      - PF_ISSUER=${PF_ISSUER}
+    #env_file:
+    #  - ./env-vars
+    #secrets:
+    #  - devops-secret
+    ports:
+      - 9022:9022
+    depends_on:
+      - "pingcentral-db"
+
+  pingcentral-db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: 2Federate
+    ports:
+      - 3306:3306
+
+# Not using
+#secrets:
+#  devops-secret:
+#    file: ${HOME}/.pingidentity/devops

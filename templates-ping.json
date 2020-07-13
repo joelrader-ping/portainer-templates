@@ -63,6 +63,112 @@
   },
   {
     "type": 3,
+    "title": "[TESTING] Customer 360",
+    "description": "Deploy a Customer-360 solution that provides Social Media Login, Multi-Factor Authentication, Risk Analysis, and ID Proofoing.",
+    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/logos/360-logo.png",
+    "categories": ["360", "Ping Identity"],
+    "note": "See our documentation for this demo on <a href=\"https://github.com/cprice-ping/Customer360\">GitHub (click here)</a><br/>",
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/joelrader-ping/portainer-templates",
+      "stackfile": "stacks/customer-360.yaml"
+    },
+    "env": [
+      {
+        "name": "PING_IDENTITY_ACCEPT_EULA",
+        "label": "Accept Ping Identity EULA?",
+        "description": "Read the EULA on the Ping Identity website",
+        "select": [
+          {
+            "text": "No, I do not accept",
+            "value": "NO",
+            "default": true
+          },
+          {
+            "text": "Yes",
+            "value": "YES"
+          }
+        ]
+      },
+      {
+        "name": "MAX_HEAP_SIZE",
+        "label": "Java Max Heap Size (1024m or larger)",
+        "default": "1024m"
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_USER",
+        "label": "Ping DevOps Username/Email",
+        "default": "Get registered at https://bit.ly/ping-devops-request"
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_KEY",
+        "label": "Ping DevOps Key",
+        "default": "Enter your Ping DevOps key here"
+      },
+      {
+        "name": "PF_LOG_LEVEL",
+        "label": "PingFederate Log Level",
+        "default": "DEBUG"
+      },
+      {
+        "name": "USER_BASE_DN",
+        "label": "PingDirectory - User BaseDN",
+        "default": "dc=customer360.com"
+      },
+      {
+        "name": "PF_USER_PWD",
+        "label": "PingFederate Admin User Password",
+        "default": "2FederateM0re"
+      },
+      {
+        "name": "PING_CENTRAL_BLIND_TRUST",
+        "label": "PingCentral - Blind Trust",
+        "default": "true"
+      },
+      {
+        "name": "PING_CENTRAL_VERIFY_HOSTNAME",
+        "label": "PingCentral - Verify Hostname",
+        "default": "false"
+      },
+      {
+        "name": "MYSQL_USER",
+        "label": "MySQL User",
+        "default": "root"
+      },
+      {
+        "name": "MYSQL_PASSWORD",
+        "label": "MySQL Password",
+        "default": "2Federate"
+      },
+      {
+        "name": "MYSQL_ROOT_PASSWORD",
+        "label": "MySQL Password",
+        "default": "2Federate"
+      },
+      {
+        "name": "PING_CENTRAL_OIDC_ENABLED",
+        "label": "PingCentral - Enable OIDC",
+        "default": "true"
+      },
+      {
+        "name": "PING_CENTRAL_CLIENT_ID",
+        "label": "PingCentral - ClientID",
+        "default": "PingCentral"
+      },
+      {
+        "name": "PING_CENTRAL_CLIENT_SECRET",
+        "label": "PingCentral - ClientSecret",
+        "default": "2FederateM0re"
+      },
+      {
+        "name": "PF_ISSUER",
+        "label": "PingCentral - PingFederate Issuer",
+        "default": "https://docker.customer360.com:9031"
+      }
+    ]
+  },
+  {
+    "type": 3,
     "title": "Workforce 360",
     "description": "Ping’s Workforce360 solution provides central authentication services to connect employees in any situation.",
     "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/logos/360-logo.png",
