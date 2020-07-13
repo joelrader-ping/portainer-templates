@@ -188,7 +188,7 @@
       {
         "name": "PING_IDENTITY_DEVOPS_USER",
         "label": "Ping DevOps Username",
-        "default": "username@domain.org"
+        "default": "Get registered at https://bit.ly/ping-devops-request"
       },
       {
         "name": "PING_IDENTITY_DEVOPS_KEY",
