@@ -21,7 +21,6 @@ services:
     # Environment variables, using syntax so that they can be updated by Portainer
     # ${ENV_VAR} allows for a matching {templates.json} reference
     - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
-    - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
     - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
     - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
     - PF_LOG_LEVEL=${PF_LOG_LEVEL}
