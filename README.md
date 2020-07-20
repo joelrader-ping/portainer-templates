@@ -47,4 +47,4 @@ Default credentials: admin/2FederateM0re
 | **Install Docker Compose**           | <https://docs.docker.com/compose/install/> |
 | **Install Portainer**                | https://www.portainer.io/installation/> |
 | **Ping Identity GitHub**             | <https://github.com/pingidentity> |
-| **Ping DevOps Registration Page      | <https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration>
+| **Ping DevOps Registration Page**    | <https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration>
