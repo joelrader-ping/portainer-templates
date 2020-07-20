@@ -6,6 +6,13 @@ This repository hosts Ping Identity application templates (**'Apps Templates'**)
 To aid in understanding how the Ping Identity Platform functions, this repository contains a set of Application Templates that are 
 intended to showcase *Proof of Concept* scenarios. Documentation links/notes are on the App Templates configuration page.
 
+## Installation Instructions ##
+> ### Pre-Reqs ###
+> * Have Docker & Docker Compose installed
+> * Linux/Mac hosts recommended (untested on Windows)
+> * Host has 4GB+ RAM (8GB recommended for larger app templates)
+> * Optional: Have a Ping DevOps Username/Key via [DevOps Registration Page](https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration)
+
 ## Already Have Portainer Installed? ##
 Template File: https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/templates-ping.json
 
@@ -14,13 +21,6 @@ https://www.portainer.io/installation/
 
 ## Screenshot of Application Templates ##
 ![Ping App Template Screenshot](screenshot.png?raw=true "Ping App Templates")
-
-## Installation Instructions ##
-> ### Pre-Reqs ###
-> * Have Docker & Docker Compose installed
-> * Host has 4GB+ RAM (8GB recommended for larger app templates)
-> * Optional: Have a Ping DevOps Username/Key via [DevOps Registration Page](https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration)
-
 
 To deploy a Portainer instance with the Ping App Templates referenced by default, run the command below. 
 
