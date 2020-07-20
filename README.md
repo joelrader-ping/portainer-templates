@@ -8,7 +8,7 @@ intended to showcase *Proof of Concept* scenarios. Documentation links/notes are
 
 ## Installation Instructions ##
 > ### Pre-Reqs ###
-> * Have Docker & Docker Compose installed
+> * Have Docker & Docker Compose installed (see Useful Links below for official instructions)
 > * Linux/Mac hosts recommended (untested on Windows)
 > * Host has 4GB+ RAM (8GB recommended for larger app templates)
 > * Optional: Have a Ping DevOps Username/Key via [DevOps Registration Page](https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration)
@@ -36,8 +36,15 @@ To deploy a Portainer instance with the Ping App Templates referenced by default
     --logo "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg" \
     --admin-password='$2y$05$phwSg3ykaHLBDYEEpUHfFeePAlN52B5jX.EOS4GsVPtr9wd008iSO'
 
-This will create an Admin Console at:
+This will create an Admin Console at: <http://localhost:9000/> (replace localhost with your IP address or hostname if needed)
+Default credentials: admin/2FederateM0re
 
-<http://localhost:9000/> (replace localhost with your IP address or hostname if needed)
- 
- Default credentials: admin/2FederateM0re
+## Useful Links ##
+| Description                          | Link |
+| ------------------------------------ | ---- |
+| **Install Docker Engine (Linux)**    | <https://docs.docker.com/engine/install/> |
+| **Docker Post-Installation (Linux)** | <https://docs.docker.com/engine/install/linux-postinstall/> |
+| **Install Docker Compose**           | <https://docs.docker.com/compose/install/> |
+| **Install Portainer**                | https://www.portainer.io/installation/> |
+| **Ping Identity GitHub**             | <https://github.com/pingidentity> |
+| **Ping DevOps Registration Page      | <https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration>
