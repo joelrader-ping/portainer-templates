@@ -37,8 +37,7 @@ To deploy a Portainer instance with the Ping App Templates referenced by default
     --admin-password='$2y$05$phwSg3ykaHLBDYEEpUHfFeePAlN52B5jX.EOS4GsVPtr9wd008iSO'
 
 This will create an Admin Console at: <http://your_host_or_ip:9000/>
-
-Default credentials: admin/2FederateM0re
+    *Default credentials: admin/2FederateM0re*
 
 ## Useful Links ##
 | Description                          | Link |
