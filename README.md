@@ -36,7 +36,8 @@ To deploy a Portainer instance with the Ping App Templates referenced by default
     --logo "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/ping-logo.svg" \
     --admin-password='$2y$05$phwSg3ykaHLBDYEEpUHfFeePAlN52B5jX.EOS4GsVPtr9wd008iSO'
 
-This will create an Admin Console at: <http://localhost:9000/> (replace localhost with your IP address or hostname if needed)
+This will create an Admin Console at: <http://<your_host_or_ip>:9000/>
+
 Default credentials: admin/2FederateM0re
 
 ## Useful Links ##
