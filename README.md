@@ -13,13 +13,13 @@ intended to showcase *Proof of Concept* scenarios. Documentation links/notes are
 > * Host has 4GB+ RAM (8GB recommended for larger app templates)
 > * Optional: Have a Ping DevOps Username/Key via [DevOps Registration Page](https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration)
 
-## Already Have Portainer Installed? ##
+### Already Have Portainer Installed? ###
 Template File: https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/templates-ping.json
 
-## How to Install Portainer ##
+### How to Install Portainer ###
 https://www.portainer.io/installation/
 
-## Screenshot of Application Templates ##
+### Screenshot of Application Templates ###
 ![Ping App Template Screenshot](screenshot.png?raw=true "Ping App Templates")
 
 To deploy a Portainer instance with the Ping App Templates referenced by default, run the command below. 
