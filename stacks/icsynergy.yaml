@@ -1,0 +1,54 @@
+version: '2'
+
+services:
+  web:
+    image: identity_rm_web_prod:latest
+    container_name: identity_rm_web_prod
+    command: gunicorn app.wsgi:application --bind 0.0.0.0:8000
+    ports:
+      - 8000
+    depends_on:
+      - db
+    #env_file:
+    #  - .env
+    # Environment variables, using syntax so that they can be updated by Portainer
+    # ${ENV_VAR} allows for a matching {templates.json} reference
+    # Example: - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - DJANGO_ALLOWED_HOSTS=*
+      - DEBUG=${DEBUG}
+      - SQL_ENGINE=${SQL_ENGINE}
+      - SQL_DATABASE=${SQL_DATABASE}
+      - SQL_USER=${SQL_USER}
+      - SQL_HOST=${SQL_HOST}
+      - SQL_PORT=${SQL_PORT}
+      - BASE_URL_PROTOCOL=${BASE_URL_PROTOCOL}
+      - BASE_URL_DOMAIN=${BASE_URL_DOMAIN}
+      - CORS_ORIGIN_ALLOW_ALL=${CORS_ORIGIN_ALLOW_ALL}
+      - GATEWAY_DEFAULT_TIMEOUT=${GATEWAY_DEFAULT_TIMEOUT}
+      - TIME_ZONE=${TIME_ZONE}
+      - LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
+    volumes:
+      - static_volume_prod:/home/app/web/staticfiles
+      - ./logs/:/var/log/django/
+  db:
+    image: identity_rm_db_prod:latest
+    container_name: identity_rm_db_prod
+    volumes:
+      - postgres_volume_prod:/var/lib/postgresql/data
+  nginx:
+    image: nginx_prod:latest
+    container_name: nginx_prod
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - web
+    volumes:
+      - static_volume_prod:/home/app/web/staticfiles
+      - ./customThemes/config.json:/usr/share/nginx/html/assets/themes/config.json
+      - ./customThemes/:/usr/share/nginx/html/assets/themes/custom/
+volumes:
+  postgres_volume_prod:
+  static_volume_prod:

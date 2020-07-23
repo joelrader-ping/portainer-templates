@@ -1,0 +1,88 @@
+[
+    {
+        "type": 3,
+        "title": "[TESTING] ICSynergy",
+        "description": "Ping + ICSynergy showcase on an IAM technology partnership",
+        "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/logos/icsynergy-logo.png",
+        "categories": ["ICSynergy", "Ping Identity"],
+        "note": "Documentation in-progress",
+        "platform": "linux",
+        "repository": {
+          "url": "https://github.com/joelrader-ping/portainer-templates",
+          "stackfile": "stacks/icsynergy.yaml"
+        },
+        "env": [
+          {
+            "name": "SECRET_KEY",
+            "label": "This key protects <resource>",
+            "default": "changeme"
+          },
+          {
+            "name": "DEBUG",
+            "label": "DEBUG=1 means <X>, DEBUG=0 means <y>",
+            "default": "1"
+          },
+          {
+            "name": "DJANGO_ALLOWED_HOSTS",
+            "label": "Use a wildcard value or <something else>",
+            "default": "*"
+          },
+          {
+            "name": "SQL_ENGINE",
+            "label": "Name of the SQL engine you wish to use",
+            "default": "django.db.backends.postgresql"
+          },
+          {
+            "name": "SQL_DATABASE",
+            "label": "Use postgres or <something else?>",
+            "default": "postgres"
+          },
+          {
+            "name": "SQL_USER",
+            "label": "The SQL user in the database",
+            "default": "postgres"
+          },
+          {
+            "name": "SQL_HOST",
+            "label": "Hostname for the SQL database",
+            "default": "db"
+          },
+          {
+            "name": "SQL_PORT",
+            "label": "Port the database is listening on",
+            "default": "5432"
+          },
+          {
+            "name": "BASE_URL_PROTOCOL",
+            "label": "Use http or https",
+            "default": "https"
+          },
+          {
+            "name": "BASE_URL_DOMAIN",
+            "label": "Base domain for hosting resources ",
+            "default": "workflowportal.icsynergy.info"
+          },
+          {
+            "name": "CORS_ORIGIN_ALLOW_ALL",
+            "label": "Set to 1 for <purpose>",
+            "default": "1"
+          },
+          {
+            "name": "GATEWAY_DEFAULT_TIMEOUT",
+            "label": "Timeout in seconds",
+            "default": "30"
+          },
+          {
+            "name": "TIME_ZONE",
+            "label": "Timezone listed as UTC/etc",
+            "default": "UTC"
+          },
+          {
+            "name": "LD_LIBRARY_PATH",
+            "label": "Absolute file system path to library",
+            "default": "/usr/local/lib"
+          }
+        ]
+      }    
+  ]
+  
