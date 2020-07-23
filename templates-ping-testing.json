@@ -11,10 +11,6 @@
           "url": "https://github.com/joelrader-ping/portainer-templates",
           "stackfile": "stacks/icsynergy.yaml"
         },
-        "volumes": [
-            { "container": "/home/app/web/staticfiles" },
-            { "container": "/var/log/django/"  }
-        ],
         "env": [
           {
             "name": "SECRET_KEY",
