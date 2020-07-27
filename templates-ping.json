@@ -7,7 +7,7 @@
     "categories": ["PingFederate", "Ping Identity"],
     "note": "<b>Admin Console: </b>https://hostname:9999/pingfederate/app<br/><b>Username: </b>admin<br/><b>Password: </b>2FederateMore",
     "platform": "linux",
-    "image": "pingidentity/pingfederate:edge",
+    "image": "pingidentity/pingfederate:10.0.4",
     "ports": [
       "9999:9999/tcp",
       "9031:9031/tcp"
