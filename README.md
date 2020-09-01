@@ -19,6 +19,13 @@ Template File: https://raw.githubusercontent.com/joelrader-ping/portainer-templa
 ### How to Install Portainer ###
 https://www.portainer.io/installation/
 
+### How to Update Portainer ###
+> * Stop all Portainer instances [docker container stop Portainer]
+> * Remove Portainer container [docker container rm Portainer]
+> * Remove Portainer image [docker image rm portainer/portainer]
+> * Pull latest Portainer image [docker pull portainer/portainer]
+> * Deploy Portainer [docker-compose or docker run]
+
 ### Screenshot of Application Templates ###
 ![Ping App Template Screenshot](screenshot.png?raw=true "Ping App Templates")
 
@@ -49,3 +56,4 @@ This will create an Admin Console at: <http://your_host_or_ip:9000/>
 | **Install Portainer**                | https://www.portainer.io/installation/> |
 | **Ping Identity GitHub**             | <https://github.com/pingidentity> |
 | **Ping DevOps Registration Page**    | <https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration>
+
