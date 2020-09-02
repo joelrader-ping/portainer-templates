@@ -391,6 +391,57 @@
         "default": "getting-started/pingfederate"
       }
     ]
+  },
+  {
+    "type": 3,
+    "title": "[TESTING] PingCentral",
+    "description": "Deploy PingCentral, a converged operating portal for Ping Identity software",
+    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/logos/ping-logo.png",
+    "categories": ["PingCentral", "Ping Identity"],
+    "note": "Login to the PingCentral console at https://<hostname>:9022 with administrator / 2Federate",
+    "platform": "linux",
+    "image": "pingidentity/pingcentral:edge",
+    "ports": [
+      "9022:9022/tcp"
+    ],
+		"volumes": [
+      {
+        "container": "/opt/out"
+			},
+			{
+				"container": "/opt/in"
+			}
+		],
+    "env": [
+      {
+        "name": "PING_IDENTITY_ACCEPT_EULA",
+        "label": "Accept Ping Identity EULA?",
+        "description": "Answer Yes if you have accepted the EULA.",
+        "select": [
+          {
+            "text": "No, I have not accepted",
+            "value": "NO",
+            "default": true
+          },
+          {
+            "text": "Yes, I have accepted",
+            "value": "YES"
+          }
+        ]
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_USER",
+        "label": "Ping DevOps Username",
+        "description": "Your Ping DevOps User's Email Address",
+        "default": "Get one at: https://pingidentity-devops.gitbook.io/devops/getstarted/devopsregistration"
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_KEY",
+        "label": "Ping DevOps Key",
+        "description": "Your Ping DevOps User's Key",
+        "default": "abcdefgh-abcd-1234-5678-abcdefgh"
+      }
+    ]
   }
   
 ]
