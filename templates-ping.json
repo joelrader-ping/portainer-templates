@@ -393,7 +393,7 @@
     ]
   },
   {
-    "type": 3,
+    "type": 1,
     "title": "[TESTING] PingCentral",
     "description": "Deploy PingCentral, a converged operating portal for Ping Identity software",
     "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/logos/ping-logo.svg",
