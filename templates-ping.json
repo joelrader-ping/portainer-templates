@@ -400,7 +400,7 @@
     "categories": ["PingCentral", "Ping Identity"],
     "note": "Login to the PingCentral console at https://hostname:9022 with administrator / 2Federate",
     "platform": "linux",
-    "image": "pingidentity/pingcentral:edge",
+    "image": "pingidentity/pingcentral",
     "ports": [
       "9022:9022/tcp"
     ],
