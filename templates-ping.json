@@ -478,12 +478,12 @@
         "select": [
           {
             "text": "No, I do not accept",
-            "value": "NO",
-            "default": true
+            "value": "NO"
           },
           {
             "text": "Yes, I accept",
-            "value": "YES"
+            "value": "YES",
+            "default": true
           }
         ]
       }
