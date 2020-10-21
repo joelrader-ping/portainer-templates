@@ -10,27 +10,27 @@ version: 2
 # disk output as that needs to be adjusted and reviewed during the training.
 
 services:
-  # pingdatagovernance:
-  #   container_name: pingdatagovernance
-  #   image: pingidentity/pingdatagovernance@sha256:09665fdfaf7437c8b6359c4db9003ee2483678cf00d2905415c0f10675c86e92
-  #   command: wait-for pingdirectory:389 -t 400 -- entrypoint.sh start-server
-  #   #env_file:
-  #   #  - ./pingidentity-devops.env
-  #   environment:
-  #     - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
-  #     - SERVER_PROFILE_PATH=server-profiles/pingdatagovernance
-  #     - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
-  #     - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
-  #     - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
-  #     - MAX_HEAP_SIZE=${MAX_HEAP_SIZE}
-  #   ports:
-  #     - "6443:443"
-  #   networks:
-  #     - datagovtraining-dmz
-  #     - datagovtraining-internal
-  #   volumes:
-  #     #- ./server-profiles/pingdatagovernance:/opt/in:delegated
-  #     - pdg-out:/opt/out:delegated
+  pingdatagovernance:
+    container_name: pingdatagovernance
+    image: pingidentity/pingdatagovernance@sha256:09665fdfaf7437c8b6359c4db9003ee2483678cf00d2905415c0f10675c86e92
+    command: wait-for pingdirectory:389 -t 400 -- entrypoint.sh start-server
+    #env_file:
+    #  - ./pingidentity-devops.env
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
+      - SERVER_PROFILE_PATH=server-profiles/pingdatagovernance
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+      - MAX_HEAP_SIZE=${MAX_HEAP_SIZE}
+    ports:
+      - "6443:443"
+    networks:
+      - datagovtraining-dmz
+      - datagovtraining-internal
+    volumes:
+      #- ./server-profiles/pingdatagovernance:/opt/in:delegated
+      - pdg-out:/opt/out:delegated
 
   pingfederate:
     container_name: pingfederate
