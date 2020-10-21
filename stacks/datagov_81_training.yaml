@@ -26,8 +26,8 @@ services:
     ports:
       - "6443:443"
     networks:
-      - datagov_training-dmz
-      - datagov_training-internal
+      - pingnet-dmz
+      - pingnet-internal
     volumes:
       #- ./server-profiles/pingdatagovernance:/opt/in:delegated
       - pdg-out:/opt/out:delegated
@@ -51,8 +51,8 @@ services:
       - "8031:8031"
       - "8999:8999"
     networks:
-      - datagov_training-dmz
-      - datagov_training-internal
+      - pingnet-dmz
+      - pingnet-internal
     volumes:
       - pf-out:/opt/out:delegated
       #- ./server-profiles/pingfederate:/opt/in:delegated
@@ -80,7 +80,7 @@ services:
       - "4443:443"
       - "4389:389"
     networks:
-      - datagov_training-internal
+      - pingnet-internal
     volumes:
       - pd-out:/opt/out:delegated
       #- ./server-profiles/pingdirectory:/opt/in:delegated
@@ -108,7 +108,7 @@ services:
     ports:
       - "5443:5443"
     networks:
-      - datagov_training-dmz
+      - pingnet-dmz
     volumes:
       #- ./server-profiles/pingdatagovernancepap:/opt/in:delegated
       - pdgpap-out:/opt/out:delegated
@@ -125,13 +125,13 @@ services:
     ports:
       - "7443:8443"
     networks:
-      - datagov_training-internal
+      - pingnet-internal
     volumes:
       - pdc:/opt/in:delegated
 
 networks:
-    datagov_training-internal:
-    datagov_training-dmz:
+    pingnet-internal:
+    pingnet-dmz:
 
 volumes:
     pdg-out:
