@@ -130,9 +130,9 @@ services:
 #     volumes:
 #       - pdc:/opt/in:delegated
 
-networks:
-    pingnet-internal:
-    pingnet-dmz:
+# networks:
+#     pingnet-internal:
+#     pingnet-dmz:
 
 volumes:
     pdg-out:
