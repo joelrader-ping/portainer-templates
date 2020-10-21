@@ -1,0 +1,135 @@
+version: "2.4"
+# The server profiles used in this example are part of this base project will
+# be stored locally on the drive
+#
+# Using specific images for PingDataGovernance-PAP this goes back a few
+# versions because of issue with image on profile loading for newer versions.
+#   See: https://jira.pingidentity.com/browse/GDO-422
+#
+# These images will use local disk for the server profiles and also a local
+# disk output as that needs to be adjusted and reviewed during the training.
+
+services:
+  pingdatagovernance:
+    container_name: pingdatagovernance
+    image: pingidentity/pingdatagovernance@sha256:09665fdfaf7437c8b6359c4db9003ee2483678cf00d2905415c0f10675c86e92
+    command: wait-for pingdirectory:389 -t 400 -- entrypoint.sh start-server
+    #env_file:
+    #  - ./pingidentity-devops.env
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
+      - SERVER_PROFILE_PATH=server-profiles/pingdatagovernance
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+      - MAX_HEAP_SIZE=${MAX_HEAP_SIZE}
+    ports:
+      - "6443:443"
+    networks:
+      - datagov_training-dmz
+      - datagov_training-internal
+    volumes:
+      #- ./server-profiles/pingdatagovernance:/opt/in:delegated
+      - pdg-out:/opt/out:delegated
+
+  pingfederate:
+    container_name: pingfederate
+    image: pingidentity/pingfederate@sha256:eef3bf2d480b8225c8781edd5c11edb2a906859748aaa3f5be1f801673d411bb
+    command: wait-for pingdirectory:389 -t 400 -- entrypoint.sh start-server
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
+      - SERVER_PROFILE_PATH=server-profiles/pingfederate
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+      - PF_ENGINE_PORT=8031
+      - PF_ADMIN_PORT=8999
+      - PF_ENGINE_PUBLIC_PORT=8031
+    #env_file:
+    #  - ./pingidentity-devops.env
+    ports:
+      - "8031:8031"
+      - "8999:8999"
+    networks:
+      - datagov_training-dmz
+      - datagov_training-internal
+    volumes:
+      - pf-out:/opt/out:delegated
+      #- ./server-profiles/pingfederate:/opt/in:delegated
+
+  pingdirectory:
+    container_name: pingdirectory
+    image: pingidentity/pingdirectory@sha256:9717b4970abcdd0194a63fa2b89fd1c9c1c58cdadd64a814579048233ea30f8d
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
+      - SERVER_PROFILE_PATH=server-profiles/pingdirectory
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+    #env_file:
+    #  - ./pingidentity-devops.env
+    ulimits:
+      nproc:
+        soft: 16384
+        hard: 16384
+      nofile:
+        soft: 65535
+        hard: 65535
+    ports:
+      - "4636:636"
+      - "4443:443"
+      - "4389:389"
+    networks:
+      - datagov_training-internal
+    volumes:
+      - pd-out:/opt/out:delegated
+      #- ./server-profiles/pingdirectory:/opt/in:delegated
+
+# For PAP the external and internal ports need to align
+  pingdatagovernancepap:
+    container_name: pingdatagovernancepap
+    image: pingidentity/pingdatagovernancepap@sha256:0e61ac7b2ad72d01604b1f16eb35157a4db4cd7f20532a7f6770259122eec901
+    environment:
+      - HTTPS_PORT=5443
+      - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
+      - SERVER_PROFILE_PATH=server-profiles/pingdatagovernancepap
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+    #env_file:
+    #  - ./pingidentity-devops.env
+    ulimits:
+      nproc:
+        soft: 16384
+        hard: 16384
+      nofile:
+        soft: 65535
+        hard: 65535
+    ports:
+      - "5443:5443"
+    networks:
+      - datagov_training-dmz
+    volumes:
+      #- ./server-profiles/pingdatagovernancepap:/opt/in:delegated
+      - pdgpap-out:/opt/out:delegated
+
+  pingdataconsole:
+    container_name: pingdataconsole
+    image: pingidentity/pingdataconsole@sha256:0c463edc7acf68c03aa0563dcd890fa36a77a8a5ab89c3b31d84e057306b0f1b
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
+      - SERVER_PROFILE_PATH=server-profiles/pingdataconsole
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+    ports:
+      - "7443:8443"
+    networks:
+      - datagov_training-internal
+    volumes:
+      - pdc:/opt/in:delegated
+
+networks:
+    datagov_training-internal:
+    datagov_training-dmz:
+
