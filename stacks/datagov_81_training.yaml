@@ -132,7 +132,7 @@ services:
       
 networks:
   pingnet-internal:
-#  pingnet-dmz:
+  pingnet-dmz:
 
 volumes:
     pdg-out:
