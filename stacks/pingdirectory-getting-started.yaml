@@ -66,4 +66,5 @@ networks:
   pingnet:
 
 volumes:
-  pingdirectory-out:
+  pd-out:
+  pf-out:
