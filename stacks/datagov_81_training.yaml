@@ -133,3 +133,9 @@ networks:
     datagov_training-internal:
     datagov_training-dmz:
 
+volumes:
+    pdg-out:
+    pf-out:
+    pd-out:
+    pdgpap-out:
+
