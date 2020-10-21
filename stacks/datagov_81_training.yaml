@@ -81,7 +81,7 @@ services:
       - "4443:443"
       - "4389:389"
     networks:
-      - datagovtraining-internal
+      - pingnet-internal
     volumes:
       - pd-out:/opt/out:delegated
       #- ./server-profiles/pingdirectory:/opt/in:delegated
@@ -131,8 +131,8 @@ services:
   #     - pdc:/opt/in:delegated
       
 networks:
-  datagovtraining-internal:
-  datagovtraining-dmz:
+  pingnet-internal:
+  pingnet-dmz:
 
 volumes:
     pdg-out:
