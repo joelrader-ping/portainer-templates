@@ -86,33 +86,33 @@ services:
       - pd-out:/opt/out:delegated
       #- ./server-profiles/pingdirectory:/opt/in:delegated
 
-# # For PAP the external and internal ports need to align
-#   pingdatagovernancepap:
-#     container_name: pingdatagovernancepap
-#     image: pingidentity/pingdatagovernancepap@sha256:0e61ac7b2ad72d01604b1f16eb35157a4db4cd7f20532a7f6770259122eec901
-#     environment:
-#       - HTTPS_PORT=5443
-#       - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
-#       - SERVER_PROFILE_PATH=server-profiles/pingdatagovernancepap
-#       - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
-#       - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
-#       - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
-#     #env_file:
-#     #  - ./pingidentity-devops.env
-#     ulimits:
-#       nproc:
-#         soft: 16384
-#         hard: 16384
-#       nofile:
-#         soft: 65535
-#         hard: 65535
-#     ports:
-#       - "5443:5443"
-#     networks:
-#       - datagovtraining-dmz
-#     volumes:
-#       #- ./server-profiles/pingdatagovernancepap:/opt/in:delegated
-#       - pdgpap-out:/opt/out:delegated
+# For PAP the external and internal ports need to align
+  pingdatagovernancepap:
+    container_name: pingdatagovernancepap
+    image: pingidentity/pingdatagovernancepap@sha256:0e61ac7b2ad72d01604b1f16eb35157a4db4cd7f20532a7f6770259122eec901
+    environment:
+      - HTTPS_PORT=5443
+      - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
+      - SERVER_PROFILE_PATH=server-profiles/pingdatagovernancepap
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+    #env_file:
+    #  - ./pingidentity-devops.env
+    ulimits:
+      nproc:
+        soft: 16384
+        hard: 16384
+      nofile:
+        soft: 65535
+        hard: 65535
+    ports:
+      - "5443:5443"
+    networks:
+      - datagovtraining-dmz
+    volumes:
+      #- ./server-profiles/pingdatagovernancepap:/opt/in:delegated
+      - pdgpap-out:/opt/out:delegated
 
   pingdataconsole:
     container_name: pingdataconsole
