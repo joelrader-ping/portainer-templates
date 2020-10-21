@@ -452,7 +452,7 @@
     "note": "See our documentation for this demo on <a href=\"TBD\"> TBD</a><br/> <b>Admin Console: </b><br/> https://hostname:8443/<br/> administrator<br/> 2FederateM0re",
     "platform": "linux",
     "repository": {
-      "url": "https://github.com/joelrader-ping/datagov_training",
+      "url": "https://github.com/joelrader-ping/portainer-templates",
       "stackfile": "stacks/datagov_81_training.yaml"
     },
     "env": [
