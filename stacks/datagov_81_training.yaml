@@ -32,30 +32,30 @@ services:
   #     #- ./server-profiles/pingdatagovernance:/opt/in:delegated
   #     - pdg-out:/opt/out:delegated
 
-  # pingfederate:
-  #   container_name: pingfederate
-  #   image: pingidentity/pingfederate@sha256:eef3bf2d480b8225c8781edd5c11edb2a906859748aaa3f5be1f801673d411bb
-  #   command: wait-for pingdirectory:389 -t 400 -- entrypoint.sh start-server
-  #   environment:
-  #     - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
-  #     - SERVER_PROFILE_PATH=server-profiles/pingfederate
-  #     - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
-  #     - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
-  #     - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
-  #     - PF_ENGINE_PORT=8031
-  #     - PF_ADMIN_PORT=8999
-  #     - PF_ENGINE_PUBLIC_PORT=8031
-  #   #env_file:
-  #   #  - ./pingidentity-devops.env
-  #   ports:
-  #     - "8031:8031"
-  #     - "8999:8999"
-  #   networks:
-  #     - datagovtraining-dmz
-  #     - datagovtraining-internal
-  #   volumes:
-  #     - pf-out:/opt/out:delegated
-  #     #- ./server-profiles/pingfederate:/opt/in:delegated
+  pingfederate:
+    container_name: pingfederate
+    image: pingidentity/pingfederate@sha256:eef3bf2d480b8225c8781edd5c11edb2a906859748aaa3f5be1f801673d411bb
+    command: wait-for pingdirectory:389 -t 400 -- entrypoint.sh start-server
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
+      - SERVER_PROFILE_PATH=server-profiles/pingfederate
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+      - PF_ENGINE_PORT=8031
+      - PF_ADMIN_PORT=8999
+      - PF_ENGINE_PUBLIC_PORT=8031
+    #env_file:
+    #  - ./pingidentity-devops.env
+    ports:
+      - "8031:8031"
+      - "8999:8999"
+    networks:
+      - datagovtraining-dmz
+      - datagovtraining-internal
+    volumes:
+      - pf-out:/opt/out:delegated
+      #- ./server-profiles/pingfederate:/opt/in:delegated
 
   pingdirectory:
     container_name: pingdirectory
@@ -132,7 +132,7 @@ services:
       
 networks:
   datagovtraining-internal:
-#  pingnet-dmz:
+  datagovtraining-dmz:
 
 volumes:
     pdg-out:
