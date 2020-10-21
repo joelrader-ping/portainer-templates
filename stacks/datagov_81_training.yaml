@@ -26,8 +26,8 @@ services:
   #   ports:
   #     - "6443:443"
   #   networks:
-  #     - pingnet-dmz
-  #     - pingnet-internal
+  #     - datagovtraining-dmz
+  #     - datagovtraining-internal
   #   volumes:
   #     #- ./server-profiles/pingdatagovernance:/opt/in:delegated
   #     - pdg-out:/opt/out:delegated
@@ -51,8 +51,8 @@ services:
   #     - "8031:8031"
   #     - "8999:8999"
   #   networks:
-  #     - pingnet-dmz
-  #     - pingnet-internal
+  #     - datagovtraining-dmz
+  #     - datagovtraining-internal
   #   volumes:
   #     - pf-out:/opt/out:delegated
   #     #- ./server-profiles/pingfederate:/opt/in:delegated
@@ -81,7 +81,7 @@ services:
       - "4443:443"
       - "4389:389"
     networks:
-      - pingnet
+      - datagovtraining-internal
     volumes:
       - pd-out:/opt/out:delegated
       #- ./server-profiles/pingdirectory:/opt/in:delegated
@@ -109,29 +109,30 @@ services:
 #     ports:
 #       - "5443:5443"
 #     networks:
-#       - pingnet-dmz
+#       - datagovtraining-dmz
 #     volumes:
 #       #- ./server-profiles/pingdatagovernancepap:/opt/in:delegated
 #       - pdgpap-out:/opt/out:delegated
 
-#   pingdataconsole:
-#     container_name: pingdataconsole
-#     image: pingidentity/pingdataconsole@sha256:0c463edc7acf68c03aa0563dcd890fa36a77a8a5ab89c3b31d84e057306b0f1b
-#     environment:
-#       - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
-#       - SERVER_PROFILE_PATH=server-profiles/pingdataconsole
-#       - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
-#       - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
-#       - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
-#     ports:
-#       - "7443:8443"
-#     networks:
-#       - pingnet-internal
-#     volumes:
-#       - pdc:/opt/in:delegated
+  pingdataconsole:
+    container_name: pingdataconsole
+    image: pingidentity/pingdataconsole@sha256:0c463edc7acf68c03aa0563dcd890fa36a77a8a5ab89c3b31d84e057306b0f1b
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/joelrader-ping/datagov_training.git
+      - SERVER_PROFILE_PATH=server-profiles/pingdataconsole
+      - PING_IDENTITY_DEVOPS_USER=${PING_IDENTITY_DEVOPS_USER}
+      - PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
+      - PING_IDENTITY_ACCEPT_EULA=${PING_IDENTITY_ACCEPT_EULA}
+    ports:
+      - "7443:8443"
+    networks:
+      - datagovtraining-internal
+    volumes:
+      - pdc:/opt/in:delegated
       
 networks:
-  pingnet:
+  datagovtraining-internal:
+  datagovtraining-dmz:
 
 volumes:
     pdg-out:
