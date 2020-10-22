@@ -241,34 +241,6 @@
   },
   {
     "type": 1,
-    "title": "PingFederate - Novacoast",
-    "description": "PingFederate instance - sample for Novacoast",
-    "categories": ["Channel Partner Demos", "Novacoast"],
-    "note": "<b>Admin Console Login</b><br>https://hostname:9998/pingfederate/app<br><b>Username: </b>admin<br><b>Password: </b>2FederateMore",
-    "platform": "linux",
-    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/logos/novacoast-logo.svg",
-    "image": "pingidentity/pingfederate:edge",
-    "ports": [
-      "9998:9999/tcp",
-      "9030:9031/tcp"
-    ],
-    "env": [
-      {
-        "name": "SERVER_PROFILE_URL",
-        "label": "Specify your own PingFederate server profile",
-        "description": "A previously saved PingFederate configuration can be saved to GitHub and referenced here",
-        "default": "https://github.com/pingidentity/pingidentity-server-profiles.git"
-      },
-      {
-        "name": "SERVER_PROFILE_PATH",
-        "label": "Specify your own PingFederate server profile path",
-        "description": "This is the location in the repo where your profile is stored",
-        "default": "getting-started/pingfederate"
-      }
-    ]
-  },
-  {
-    "type": 1,
     "title": "PingIdentity/OneIdentity DevOps Solution Lab",
     "description": "Demonstration of Ping Identity and One Identity environment with Workflow Capabilities + SSO",
     "categories": ["Channel Partner Demos", "One Identity"],
@@ -486,7 +458,12 @@
             "default": true
           }
         ]
-      }
+      },
+      {
+        "name": "DATAGOVERNANCE_PORT",
+        "label": "PingDataGovernance Port (Default 8443:443)",
+        "default": "8443"
+      },
     ]
   }
   
