@@ -58,6 +58,32 @@
         "label": "Specify your own PingFederate server profile path",
         "description": "This is the location in the repo where your profile is stored",
         "default": "getting-started/pingfederate"
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_USER",
+        "label": "Ping DevOps Username",
+        "default": "username@domain.org"
+      },
+      {
+        "name": "PING_IDENTITY_DEVOPS_KEY",
+        "label": "Ping DevOps Key",
+        "default": "abcdefgh-abcd-1234-5678-abcdefgh"
+      },
+      {
+        "name": "PING_IDENTITY_ACCEPT_EULA",
+        "label": "Accept Ping Identity EULA?",
+        "description": "Accept the EULA in order to successfully deploy this template",
+        "select": [
+          {
+            "text": "No, I do not accept",
+            "value": "NO"
+          },
+          {
+            "text": "Yes, I accept",
+            "value": "YES",
+            "default": true
+          }
+        ]
       }
     ]
   },
