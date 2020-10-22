@@ -338,33 +338,6 @@
     ]
   },
   {
-    "type": 3,
-    "title": "[TESTING] PingFederate HTTP BIN Sample App",
-    "description": "Login to PingFederate on port 9999",
-    "logo": "https://raw.githubusercontent.com/joelrader-ping/portainer-templates/master/logos/ping-logo.svg",
-    "categories": ["PingFederate", "Ping Identity"],
-    "note": "Additional notes go here. Should reference something in the external repository",
-    "platform": "linux",
-    "repository": {
-      "url": "https://github.com/jstinnett23/pingfederate-helloworld-channel",
-      "stackfile": "docker-compose.yaml"
-    },
-    "env": [
-      {
-        "name": "SERVER_PROFILE_URL",
-        "label": "Specify your own PingFederate server profile",
-        "description": "A previously saved PingFederate configuration can be saved to GitHub and referenced here",
-        "default": "https://github.com/pingidentity/pingidentity-server-profiles.git"
-      },
-      {
-        "name": "SERVER_PROFILE_PATH",
-        "label": "Specify your own PingFederate server profile path",
-        "description": "This is the location in the repo where your profile is stored",
-        "default": "getting-started/pingfederate"
-      }
-    ]
-  },
-  {
     "type": 1,
     "title": "PingCentral",
     "description": "Deploy PingCentral, a converged operating portal for Ping Identity software",
