@@ -30,7 +30,7 @@ services:
       - datagovtraining-internal
     volumes:
       #- ./server-profiles/pingdatagovernance:/opt/in:delegated
-      - pdg-out:/opt/out:delegated
+      - dgtraining-pdg-out:/opt/out:delegated
 
   pingfederate:
     container_name: pingfederate
@@ -54,7 +54,7 @@ services:
       - datagovtraining-dmz
       - datagovtraining-internal
     volumes:
-      - pf-out:/opt/out:delegated
+      - dgtraining-pf-out:/opt/out:delegated
       #- ./server-profiles/pingfederate:/opt/in:delegated
 
   pingdirectory:
@@ -83,7 +83,7 @@ services:
     networks:
       - datagovtraining-internal
     volumes:
-      - pd-out:/opt/out:delegated
+      - dgtraining-pd-out:/opt/out:delegated
       #- ./server-profiles/pingdirectory:/opt/in:delegated
 
 # For PAP the external and internal ports need to align
@@ -112,7 +112,7 @@ services:
       - datagovtraining-dmz
     volumes:
       #- ./server-profiles/pingdatagovernancepap:/opt/in:delegated
-      - pdgpap-out:/opt/out:delegated
+      - dgtraining-pdgpap-out:/opt/out:delegated
 
   pingdataconsole:
     container_name: pingdataconsole
@@ -134,9 +134,9 @@ networks:
   datagovtraining-internal:
   datagovtraining-dmz:
 
-volumes:
-    pdg-out:
-    pf-out:
-    pd-out:
-    pdgpap-out:
+#volumes:
+#    pdg-out:
+#    pf-out:
+#    pd-out:
+#    pdgpap-out:
 
