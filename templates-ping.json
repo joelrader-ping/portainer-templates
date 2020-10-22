@@ -463,7 +463,7 @@
         "name": "DATAGOVERNANCE_PORT",
         "label": "PingDataGovernance Port (Default 8443:443)",
         "default": "8443"
-      },
+      }
     ]
   }
   
