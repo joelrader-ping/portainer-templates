@@ -110,7 +110,8 @@ services:
         soft: 65535
         hard: 65535
     ports:
-      - "5443:5443"
+      #- "5443:5443"
+      - "8445:5443"
     networks:
       - datagovtraining-dmz
     volumes:
