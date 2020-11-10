@@ -13,7 +13,7 @@ services:
   pingdatagovernance:
     container_name: DGTraining-DataGovernance
     image: pingidentity/pingdatagovernance@sha256:09665fdfaf7437c8b6359c4db9003ee2483678cf00d2905415c0f10675c86e92
-    command: wait-for pingdirectory:389 -t 400 -- entrypoint.sh start-server
+    command: wait-for pingdirectory:389 -t 500 -- entrypoint.sh start-server
     #env_file:
     #  - ./pingidentity-devops.env
     environment:
