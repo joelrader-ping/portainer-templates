@@ -15,11 +15,11 @@
     "volumes": [
       {
         "container": "/opt/out"
-			},
-			{
-				"container": "/opt/in"
-			}
-		],
+      },
+      {
+	"container": "/opt/in"
+      }
+    ],
     "env": [
       {
         "name": "SERVER_PROFILE_URL",
